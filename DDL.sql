@@ -62,5 +62,5 @@ insert into ant_anotacao(ant_texto, ant_data_hora, ant_usr_id)
   values('Projeto Novo', '2024-08-01 20:00', 1);
 
 insert into tra_trabalho (tra_titulo, tra_data_hora_entrega, tra_grupo, tra_nota, tra_justificativa)
- values ('Teste 1', current_timestamp(), 'A', 6, 'ok'),
- ('Teste 2', current_timestamp(), 'B', 3, 'Incompleto');  
+ values ('Teste 1', current_timestamp(), 'Alpha', 6, 'Bom, mas falta conteúdo'),
+ ('Teste 2', current_timestamp(), 'Beta', 3, 'Incompleto');  
