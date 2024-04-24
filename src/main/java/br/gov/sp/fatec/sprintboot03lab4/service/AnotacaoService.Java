@@ -30,7 +30,7 @@ public class AnotacaoService {
                 anotacao.getTexto().isBlank()||
                 anotacao.getUsuario() == null ||
                 anotacao.getUsuario().getId() == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Dados inválidos!");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Dados Inválidos!");
         }
         if(anotacao.getDataHora() == null) {
             anotacao.setDataHora(LocalDateTime.now());

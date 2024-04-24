@@ -20,7 +20,7 @@ public class TrabalhoService {
 
     public Trabalho newTrabalho(Trabalho trabalho) {
         if(trabalho == null || trabalho.getTra_titulo().isBlank())
-        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Dados de usuário inválidos!");
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Os Dados do Usuário inválidos!");
         return repository.save(trabalho);
     }
 
@@ -31,7 +31,7 @@ public class TrabalhoService {
     public Trabalho findById(Long id) {
         Optional<Trabalho> trabalhoOp = repository.findById(id);
         if(trabalhoOp.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Trabalho not found");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Trabalho NÃO Encontrado");
         } return trabalhoOp.get();
 
     }

@@ -34,7 +34,7 @@ public class UsuarioService {
                 usuario.getNome().isBlank() ||
                 usuario.getSenha() == null ||
                 usuario.getSenha().isBlank()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Dados de usuário inválidos!");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Dados de USUÁRIO estão inválidos!");
         }
         if(usuario.getAutorizacoes() != null &&
                 !usuario.getAutorizacoes().isEmpty()) {
@@ -51,7 +51,7 @@ public class UsuarioService {
     public Autorizacao buscarAutorizacaoPorId(Long id) {
         Optional<Autorizacao> autOp = autRepo.findById(id);
         if(autOp.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Autorização não encontrada!");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "NÃO foi encontrada a Autorização!");
         }
         return autOp.get();
     }
@@ -59,7 +59,7 @@ public class UsuarioService {
     public Usuario buscarPorId(Long id) {
         Optional<Usuario> usuarioOp = usuarioRepo.findById(id);
         if(usuarioOp.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuário não encontrado!");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuário NÃO encontrado!");
         }
         return usuarioOp.get();
     }
