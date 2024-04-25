@@ -52,6 +52,14 @@ create table tra_trabalho (
   tra_justificativa varchar(100)
 );
 
+create table rac_racao (
+  rac_id bigint primary key auto_increment,
+  rac_marca varchar(100) not null unique,
+  rac_data_hora_ultima_compra datetime not null,
+  rac_quantidade_estoque float,
+  rac_nota int not null
+);
+
 insert into usr_usuario (usr_nome, usr_senha)
   values ('admin', '$2a$10$i3.Z8Yv1Fwl0I5SNjdCGkOTRGQjGvHjh/gMZhdc3e7LIovAklqM6C');
 insert into aut_autorizacao (aut_nome)
@@ -60,6 +68,12 @@ insert into uau_usuario_autorizacao (usr_id, aut_id)
   values (1, 1);
 insert into ant_anotacao(ant_texto, ant_data_hora, ant_usr_id)
   values('Projeto Novo', '2024-08-01 20:00', 1);
+
+
+insert into rac_racao (rac_marca, rac_data_hora_ultima_compra, rac_quantidade_estoque, rac_nota)
+value ('Purina', current_timestamp(), 10.5, 7),
+      ('Pedigree', '2024-03-15 23:59:59', null, 5);
+
 
 insert into tra_trabalho (tra_titulo, tra_data_hora_entrega, tra_grupo, tra_nota, tra_justificativa)
  values ('Teste 1', current_timestamp(), 'Alpha', 6, 'Bom, mas falta conteúdo'),
